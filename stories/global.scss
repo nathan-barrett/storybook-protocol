@@ -1,0 +1,76 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@use "../assets/sass/protocol/includes/lib" with ($font-path: "/assets/fonts/");
+@use '../assets/sass/protocol/includes/fonts/inter';
+@use '../assets/sass/protocol/includes/fonts/metropolis';
+@use '../assets/sass/protocol/includes/fonts/zilla-slab';
+
+@use "../assets/sass/protocol/includes/themes";
+
+// Base utilities
+@use '../assets/sass/protocol/base/elements';
+@use '../assets/sass/protocol/base/utilities/backgrounds';
+@use '../assets/sass/protocol/base/utilities/titles';
+
+
+// Base includes - animations
+@use '../assets/sass/protocol/base/includes';
+
+html {
+    @include lib.font-base;
+}
+
+h1, h2 {
+    @include lib.font-mozilla
+}
+
+body.mzp-t-dark {
+
+    .docs-story {
+        @extend .mzp-t-dark;
+    }
+}
+
+.color-heading {
+    margin: lib.$spacing-lg 0;
+}
+
+
+.color-item {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: lib.$spacing-md;
+
+    @media #{lib.$mq-md} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{lib.$mq-lg} {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.swatch-item {
+    margin: 0;
+    width: 100%;
+
+    svg {
+        width: 100%;
+    }
+
+    figcaption {
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+            margin: lib.$spacing-sm 0;
+        }
+
+        code {
+            align-self: flex-start;
+            margin-bottom: lib.$spacing-sm;
+        }
+    }
+}

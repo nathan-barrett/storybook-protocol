@@ -1,0 +1,40 @@
+import { colors } from "/helpers/colors.js";
+import { Unstyled } from '@storybook/blocks';
+
+
+
+<Unstyled>
+
+# Colors
+Colors are defined as named tokens so they can be consistent throughout Protocol.
+When using these colors in Sass, use the token variable rather than the hex value.
+Avoid using colors outside this palette unless you have a good reason.
+
+<div className="color-palette">
+    {
+    Object.keys(colors).map((token, i) => {
+        const colorObject = colors[token];
+        return(
+            <section key={i}>
+                <h2 class="color-heading">{token}</h2>
+                <div className="color-item">
+                    {colorObject.map(({name, value, token}) => {
+                    return (
+                        <figure className="swatch-item" key={name}>
+                            <svg className="docs-swatch-image" width="64" height="64">
+                                <rect fill={value} width="100%" height="100%" stroke="#000" strokeOpacity=".1" strokeWidth="2" rx="6" ry="6"></rect>
+                            </svg>
+                            <figcaption>
+                                <h4>{name}</h4>
+                                <code>{token}</code>
+                                <code>{value}</code>
+                            </figcaption>
+                        </figure>
+                        )
+                    })}
+                </div>
+            </section>
+        )})
+    }
+</div>
+</Unstyled>
