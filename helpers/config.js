@@ -19,6 +19,20 @@ const initialObj = {
     Utility: []
 }
 
+const designTokens = {
+  borders: tokens.filter(({ token }) => token.includes("radius")),
+  shadows: tokens.filter(({ token }) => token.includes("shadow")),
+  spacing: tokens.filter(
+    ({ token }) => token.includes("spacing") || token.includes("layout")
+  ),
+  content: tokens.filter(({ token }) => token.includes("content")),
+  screens: tokens.filter(({ token }) => token.includes("screen-")),
+  queries: tokens.filter(({ token }) => token.includes("mq-")),
+  fonts: tokens.filter(({ token }) => token.includes("font")),
+};
+
+
+
 
 const colors = colorMap.reduce((colorObject, color) => {
     // add tokens to child objects
@@ -54,8 +68,18 @@ const colors = colorMap.reduce((colorObject, color) => {
     return colorObject;
 }, initialObj);
 
+const specimens = {
+  alphabet: "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz",
+  characters: "ÅåÂâÀàÁáÄäÃãĄąẢảĆćÇçĈĉĐđÉéÏïÎîŁłÑñØøÖöÕõÜüÛû",
+  digits: "0123456789",
+  punctuation: ". … , · • : ; ¡ ! ¿ ? { } [ ] ( ) / — – - _ * ‹ › « » ‚ ‘ ’ „ “ ” '",
+  special: "| ¦ @ & † ‡ ❡ ¶ § ◊ ^ ~ © ® ℗ ™",
+  math: "≈ ~ = ≠ ∙ ÷ ¬ − + ± × ∕ > ≥ ∞ < ≤ % ‰ ∫ ∂ ∆ ∏ ∑ √",
+  heading: "Sphinx of black quartz, judge my vow!"
+}
 
 
-export { colors }
+
+export { colors, specimens, designTokens };
 
 

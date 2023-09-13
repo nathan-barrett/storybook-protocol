@@ -10,6 +10,7 @@ const config = {
     "@storybook/addon-interactions",
     "@whitespace/storybook-addon-html",
     "@storybook/addon-viewport",
+    "@storybook/addon-a11y",
     {
       name: "@storybook/addon-styling",
       options: {
@@ -21,7 +22,7 @@ const config = {
     name: "@storybook/html-webpack5",
     options: {},
   },
-  staticDirs: ["../assets"],
+  staticDirs: ["../assets", "../static"],
   docs: {
     autodocs: "tag",
   },

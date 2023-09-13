@@ -2,21 +2,24 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@use "../assets/sass/protocol/includes/lib" with ($font-path: "/assets/fonts/");
-@use '../assets/sass/protocol/includes/fonts/inter';
-@use '../assets/sass/protocol/includes/fonts/metropolis';
-@use '../assets/sass/protocol/includes/fonts/zilla-slab';
+@use "../../assets/sass/protocol/includes/lib" with ($font-path: "/assets/fonts/");
+@use '../../assets/sass/protocol/includes/fonts/inter';
+@use '/assets/sass/protocol/includes/fonts/metropolis';
+@use '/assets/sass/protocol/includes/fonts/zilla-slab';
 
-@use "../assets/sass/protocol/includes/themes";
+@use "/assets/sass/protocol/includes/themes";
 
 // Base utilities
-@use '../assets/sass/protocol/base/elements';
-@use '../assets/sass/protocol/base/utilities/backgrounds';
-@use '../assets/sass/protocol/base/utilities/titles';
-
+@use '/assets/sass/protocol/base/elements';
+@use '/assets/sass/protocol/base/utilities/backgrounds';
+@use '/assets/sass/protocol/base/utilities/titles';
 
 // Base includes - animations
-@use '../assets/sass/protocol/base/includes';
+@use '/assets/sass/protocol/base/includes';
+
+@use "typography";
+@use 'design-tokens';
+
 
 html {
     @include lib.font-base;
@@ -31,6 +34,11 @@ body.mzp-t-dark {
     .docs-story {
         @extend .mzp-t-dark;
     }
+}
+
+.sbdocs ul {
+    list-style-type: disc;
+    padding-left: 1.25em;
 }
 
 .color-heading {
@@ -74,3 +82,13 @@ body.mzp-t-dark {
         }
     }
 }
+
+// override some protocol styles to not interfere with storybook's args-table
+.docblock-argstable select {
+    &:hover,
+    &:focus,
+    &:active {
+        background-image: none;
+    }
+}
+

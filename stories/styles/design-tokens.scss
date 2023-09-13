@@ -1,0 +1,68 @@
+@use "/assets/sass/protocol/base/elements/tables";
+
+$color-text: #000;
+
+.docs-token-border {
+    background: gray;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 3rem;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.docs-token-shadow {
+    background: white;
+    height: 3rem;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.docs-token-space {
+    background: gray;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.docs-tokens-table {
+    width: 100%;
+    margin: 1rem -0.5rem;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+
+    td,
+    th {
+        padding: 0.75em 0.5rem;
+        text-align: start;
+
+        // text-align: start isn't fully supported for th elements
+        [dir="ltr"] & {
+            text-align: left;
+        }
+
+        [dir="rtl"] & {
+            text-align: right;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: rgba($color-text, 0.05);
+    }
+
+    th {
+        background-color: rgba($color-text, 0.075);
+        border-bottom: 1px solid rgba($color-text, 0.1);
+    }
+
+    .col-token {
+        width: 25%;
+    }
+
+    .col-value {
+        width: 60%;
+    }
+
+    tbody th {
+        font-weight: normal;
+    }
+}

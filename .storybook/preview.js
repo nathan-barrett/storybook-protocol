@@ -1,5 +1,9 @@
-import "../stories/global.scss";
+import { SyntaxHighlighter } from "@storybook/components";
+import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
+import "../stories/styles/global.scss";
 import { useTheme } from "./useTheme";
+
+SyntaxHighlighter.registerLanguage("scss", scss);
 
 const preview = {
   parameters: {
@@ -17,9 +21,9 @@ const preview = {
     },
     options: {
       storySort: {
-        order: ['Documentation', ["Design Principles", "Colors"], "Components"]
-      }
-    }
+        order: ["Documentation", ["Design Principles", "Colors"], "Components"],
+      },
+    },
   },
   globalTypes: {
     theme: {
@@ -32,11 +36,15 @@ const preview = {
         // Array of plain string values or MenuItem shape (see below)
         items: [
           {
-           value: "light", icon: "sun", title: "Light"
+            value: "light",
+            icon: "sun",
+            title: "Light",
           },
           {
-            value: "dark", icon: "moon", title: "Dark"
-          }
+            value: "dark",
+            icon: "moon",
+            title: "Dark",
+          },
         ],
         // Change title based on selected value
         dynamicTitle: true,
@@ -45,6 +53,5 @@ const preview = {
   },
   decorators: [useTheme],
 };
-
 
 export default preview;

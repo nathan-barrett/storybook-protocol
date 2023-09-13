@@ -1,0 +1,236 @@
+@use "/assets/sass/protocol/includes/lib";
+
+.docs-specimen {
+    border-radius: lib.$border-radius-sm;
+    border: 1px solid lib.$color-light-gray-60;
+    padding: lib.$spacing-md;
+    margin: lib.$spacing-lg 0;
+    overflow-x: auto;
+}
+
+.docs-scale-sample {
+    display: block;
+    margin: 0 0 0.25em;
+}
+
+.docs-specimen-font {
+    @include lib.text-title-md;
+}
+
+#specimen-inter {
+    @include lib.font-base;
+}
+
+#specimen-zilla-slab {
+    @include lib.font-mozilla;
+}
+
+#specimen-metropolis {
+    @include lib.font-firefox;
+}
+
+.docs-scale-sample-title-2xl {
+    @include lib.text-title-2xl;
+    font-family: lib.$title-font-family;
+    font-weight: bold;
+
+    @supports (--css: variables) {
+        font-family: var(--title-font-family);
+    }
+}
+
+.docs-scale-sample-title-xl {
+    @include lib.text-title-xl;
+    font-family: lib.$title-font-family;
+    font-weight: bold;
+
+    @supports (--css: variables) {
+        font-family: var(--title-font-family);
+    }
+}
+
+.docs-scale-sample-title-lg {
+    @include lib.text-title-lg;
+    font-family: lib.$title-font-family;
+    font-weight: bold;
+
+    @supports (--css: variables) {
+        font-family: var(--title-font-family);
+    }
+}
+
+.docs-scale-sample-title-md {
+    @include lib.text-title-md;
+    font-family: lib.$title-font-family;
+    font-weight: bold;
+
+    @supports (--css: variables) {
+        font-family: var(--title-font-family);
+    }
+}
+
+.docs-scale-sample-title-sm {
+    @include lib.text-title-sm;
+    font-family: lib.$title-font-family;
+    font-weight: bold;
+
+    @supports (--css: variables) {
+        font-family: var(--title-font-family);
+    }
+}
+
+.docs-scale-sample-title-xs {
+    @include lib.text-title-xs;
+    font-family: lib.$title-font-family;
+    font-weight: bold;
+
+    @supports (--css: variables) {
+        font-family: var(--title-font-family);
+    }
+}
+
+.docs-scale-sample-title-2xs {
+    @include lib.text-title-2xs;
+    font-family: lib.$title-font-family;
+    font-weight: bold;
+
+    @supports (--css: variables) {
+        font-family: var(--title-font-family);
+    }
+}
+
+.docs-scale-sample-title-3xs {
+    @include lib.text-title-3xs;
+    font-family: lib.$title-font-family;
+    font-weight: bold;
+
+    @supports (--css: variables) {
+        font-family: var(--title-font-family);
+    }
+}
+
+.docs-scale-sample-body-xl {
+    @include lib.text-body-xl;
+}
+
+.docs-scale-sample-body-lg {
+    @include lib.text-body-lg;
+}
+
+.docs-scale-sample-body-md {
+    @include lib.text-body-md;
+}
+
+.docs-scale-sample-body-sm {
+    @include lib.text-body-sm;
+}
+
+.docs-scale-sample-body-xs {
+    @include lib.text-body-xs;
+}
+
+specimen-type-scale-condensed {
+    .docs-scale-sample-title-2xl {
+        font-size: 24px;
+        line-height: 1.166;
+
+        @media #{lib.$mq-md} {
+            font-size: 32px;
+            line-height: 1.125;
+        }
+    }
+
+    .docs-scale-sample-title-xl {
+        font-size: 21px;
+        line-height: 1.2;
+
+        @media #{lib.$mq-md} {
+            font-size: 24px;
+            line-height: 1.166;
+        }
+    }
+
+    .docs-scale-sample-title-lg {
+        font-size: 18px;
+        line-height: 1.2;
+
+        @media #{lib.$mq-md} {
+            font-size: 21px;
+        }
+    }
+
+    .docs-scale-sample-title-md {
+        font-size: 16px;
+        line-height: 1.25;
+
+        @media #{lib.$mq-md} {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+    }
+
+    .docs-scale-sample-title-sm {
+        font-size: 14px;
+        line-height: 1.25;
+
+        @media #{lib.$mq-md} {
+            font-size: 16px;
+        }
+    }
+
+    .docs-scale-sample-title-xs {
+        font-size: 14px;
+        line-height: 1.25;
+    }
+
+    .docs-scale-sample-title-2xs {
+        font-size: 14px;
+        line-height: 1.25;
+    }
+
+    .docs-scale-sample-title-3xs {
+        font-size: 14px;
+        line-height: 1.25;
+    }
+
+    .docs-scale-sample-body-xl {
+        font-size: 16px;
+        line-height: 1.5;
+
+        @media #{lib.$mq-md} {
+            font-size: 18px;
+        }
+    }
+
+    .docs-scale-sample-body-lg {
+        font-size: 14px;
+        line-height: 1.5;
+
+        @media #{lib.$mq-md} {
+            font-size: 16px;
+        }
+    }
+
+    .docs-scale-sample-body-md {
+        font-size: 12px;
+        line-height: 1.5;
+
+        @media #{lib.$mq-md} {
+            font-size: 14px;
+        }
+    }
+
+    .docs-scale-sample-body-sm {
+        font-size: 11px;
+        line-height: 1.5;
+
+        @media #{lib.$mq-md} {
+            font-size: 12px;
+        }
+    }
+
+    .docs-scale-sample-body-xs {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+}

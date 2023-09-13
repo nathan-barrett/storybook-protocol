@@ -1,0 +1,89 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import { designTokens } from "/helpers/config.js";
+
+
+<Meta title="Documentation / Fundamentals / Design Tokens" />
+<Unstyled>
+    # Design Tokens
+
+    [Design tokens](https://medium.com/eightshapes-llc/25dd82d58421) are named entities
+    that store visual design information. These are used in place of hard-coded values
+    (such as hex values for color or pixels for spacing) in order to maintain a
+    scalable, consistent system for UI development.
+
+    <table className="docs-tokens-table">
+        <thead>
+        <tr>
+            <th className="col-token">Token</th>
+            <th className="col-value">Value</th>
+            <th className="col-example">Example</th>
+        </tr>
+        </thead>
+        <tbody>
+        {designTokens.borders.map(border => (
+        <tr key={border.name}>
+            <th><code>{border.token}</code></th>
+            <td><code>{border.value}</code></td>
+            <td><div className="docs-token-border" style={{ borderRadius: border.value }}></div></td>
+        </tr>
+        ))}
+        </tbody>
+    </table>
+
+    ## Box shadows
+
+    Shadows consist of three layers of different spreads and opacities. The RGBA colors are
+    equivalent to the tokens `$color-ink-90`, `$color-blue-90`, and `$color-ink-90`.
+
+    <table className="docs-tokens-table">
+    <thead>
+        <tr>
+            <th className="col-token">Token</th>
+            <th className="col-value">Value</th>
+            <th className="col-example">Example</th>
+        </tr>
+    </thead>
+    <tbody>
+    {designTokens.shadows.map(shadow => (
+        <tr key={shadow.name}>
+            <th><code>{ shadow.token }</code></th>
+            <td><code>{shadow.value}</code></td>
+            <td><div className="docs-token-shadow" style={{ boxShadow: shadow.value }}></div></td>
+        </tr>
+    ))}
+    </tbody>
+    </table>
+
+    ## Colors
+
+    Protocol has a broad coloe palette, each with a token variable. See the
+    [Color page](/stories/Documentation/Fundamentals/color) for the complete list.
+
+    ## Spacing units
+
+    Protocol has two types of tokens used for spacing units (margins and padding).
+    The `$spacing-*` tokens are smaller and generally intended for tighter spacing
+    within components. The `$layout-*` tokens are larger and intended for more
+    generous spaces between components.
+
+    <table className="docs-tokens-table">
+    <thead>
+        <tr>
+            <th className="col-token">Token</th>
+            <th className="col-value">Value</th>
+            <th className="col-example">Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        {designTokens.spacing.map(space => (
+            <tr key={space.name}>
+                <th><code>{space.token}</code></th>
+                <td><code>{space.value}</code></td>
+                <td><div className="docs-token-space" style={{ height: space.value }}></div></td>
+            </tr>
+        ))}
+    </tbody>
+    </table>
+
+
+</Unstyled>

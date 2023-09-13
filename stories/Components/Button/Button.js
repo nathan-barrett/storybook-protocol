@@ -6,11 +6,12 @@ export const createButton = ({
   isDark,
   disabled = false
 }) => {
-  const className = `mzp-c-button ${size} ${theme} ${isDark ? "mzp-t-dark" : ""}`;
+  const className = `mzp-c-button ${size || 'mzp-t-lg'} ${theme} ${
+    isDark ? "mzp-t-dark" : ""
+  } ${disabled ? "disabled" : ""}`;
 
 
-
-  return `<button type='button' class='${className.trim()}' ${disabled ? 'disabled' : ''}>${label}</button>`;
+  return `<button type='button' class='${className.trim()}'>${label}</button>`;
 };
 
 
