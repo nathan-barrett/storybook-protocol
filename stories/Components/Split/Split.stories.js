@@ -7,6 +7,12 @@ export default {
   render: ({ ...args }) => {
     return createSplit({ ...args });
   },
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/qtKx5nk0d9PjLZYlTuFg5v/Mozilla-Core---Protocol-Component-Library?type=design&node-id=1071%3A263199&mode=design&t=nofsSyURHWnPYZQh-1"
+    }
+  },
   argTypes: {
     blockClass: {
       control: { type: "select",

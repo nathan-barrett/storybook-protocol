@@ -1,3 +1,5 @@
+import { useTheme } from './useTheme';
+
 /** @type { import('@storybook/html-webpack5').StorybookConfig } */
 const config = {
   stories: [
@@ -11,6 +13,7 @@ const config = {
     "@whitespace/storybook-addon-html",
     "@storybook/addon-viewport",
     "@storybook/addon-a11y",
+    "@storybook/addon-designs",
     {
       name: "@storybook/addon-styling",
       options: {
@@ -25,7 +28,9 @@ const config = {
   staticDirs: ["../assets", "../static"],
   docs: {
     autodocs: "tag",
+
   },
+  decorators: [useTheme]
 };
 
 export default config;

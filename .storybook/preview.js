@@ -7,7 +7,8 @@ SyntaxHighlighter.registerLanguage("scss", scss);
 
 const preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { disable: true },
+    backgrounds: { disable: true },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -21,7 +22,7 @@ const preview = {
     },
     options: {
       storySort: {
-        order: ["Documentation", ["Design Principles", "Colors"], "Components"],
+        order: ["Documentation", ["Introduction", "Fundamentals"], "Components"],
       },
     },
   },
@@ -36,11 +37,13 @@ const preview = {
         // Array of plain string values or MenuItem shape (see below)
         items: [
           {
+            key: "light",
             value: "light",
             icon: "sun",
             title: "Light",
           },
           {
+            key: "dark",
             value: "dark",
             icon: "moon",
             title: "Dark",

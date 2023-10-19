@@ -4,6 +4,12 @@ import "/assets/sass/protocol/components/_button.scss"
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction
 export default {
   title: 'Components/Button',
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/qtKx5nk0d9PjLZYlTuFg5v/Mozilla-Core---Protocol-Component-Library?type=design&node-id=1056%3A169258&mode=design&t=nofsSyURHWnPYZQh-1",
+    },
+  },
   render: ({ label, ...args }, context) => {
 
     // You can either use a function to create DOM elements or use a plain html string!
@@ -52,7 +58,7 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/html/writing-stories/args
 export const Primary = {
   args: {
-    label: 'Primary Button',
+    label: "Primary Button",
   },
 };
 
