@@ -20,6 +20,12 @@
 @use "typography";
 @use 'design-tokens';
 
+// Imports for demos
+@use '/assets/sass/protocol/components/sidebar-menu';
+@use '/assets/sass/protocol/templates/main-with-sidebar';
+@use '/assets/sass/protocol/components/article';
+
+
 
 html {
     @include lib.font-base;

@@ -19,4 +19,4 @@ MzpBase.init = () => {
     doc.className = doc.className.replace(/\bno-js\b/, 'js');
 };
 
-module.exports = MzpBase;
+module.export = MzpBase;

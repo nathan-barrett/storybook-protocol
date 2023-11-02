@@ -1,12 +1,17 @@
 import { SyntaxHighlighter } from "@storybook/components";
+import React from 'react';
 import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
 import "../stories/styles/global.scss";
 import { useTheme } from "./useTheme";
+import MzpBase from "../assets/js/protocol/base";
+import { DocsContainer } from "@storybook/addon-docs/blocks";
 
 SyntaxHighlighter.registerLanguage("scss", scss);
+console.log(MzpBase);
 
 const preview = {
   parameters: {
+    layout: 'fullscreen',
     actions: { disable: true },
     backgrounds: { disable: true },
     controls: {
@@ -19,6 +24,13 @@ const preview = {
       canvas: {
         sourceState: "shown",
       },
+      container: ({children, context}) => {
+        return (
+          <DocsContainer context={context}>
+            <div className="js">{children}</div>
+          </DocsContainer>
+        )
+      }
     },
     options: {
       storySort: {
